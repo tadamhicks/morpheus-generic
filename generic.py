@@ -5,7 +5,7 @@ import argparse
 def call_get_api(url, token):
     auth_header = {"Authorization": "Bearer " + token}
     auth_header["Content-Type"] = "application/json"
-    json_data = requests.get(url, headers=auth_headers, verify=false).json()
+    json_data = requests.get(url, headers=auth_header, verify=false).json()
     return json_data
 
 
