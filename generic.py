@@ -29,6 +29,6 @@ if __name__ == '__main__':
 
     parsed = parser.parse_args()
     
-    response = call_get_api(parsed.token, parsed.url)
+    response = call_get_api(parsed.url, parsed.token)
     
     print str(response)
