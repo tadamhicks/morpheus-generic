@@ -2,10 +2,10 @@ import requests
 import argparse
 
 
-def call_api(url, token):
+def call_get_api(url, token):
     auth_header = {"Authorization": "Bearer " + token}
     auth_header["Content-Type"] = "application/json"
-    json_data = requests.post(url, headers=headers, json=query, verify=verify).json()
+    json_data = requests.get(url, headers=headers, json=query, verify=verify).json()
     return json_data
 
 
@@ -28,7 +28,6 @@ if __name__ == '__main__':
 
 
     parsed = parser.parse_args()
-    username = parsed.username
     
     response = call_api(parsed.token, parsed.url)
     
